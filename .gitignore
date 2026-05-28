@@ -17,12 +17,16 @@ ENV/
 # Qdrant Database and local storage
 .qdrant/
 *.db
+*.db-*
 *.sqlite
 auspex.db
 learning_database.json
 
 # Streamlit config and cache
 .streamlit/
+
+# Runtime logs
+logs/
 
 # OS specific files
 .DS_Store
