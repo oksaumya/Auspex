@@ -1,0 +1,27 @@
+[project]
+name = "auspex"
+version = "2.0.0"
+description = "Auspex reads the omens in every commit — a multi-agent code review pipeline (LangGraph + Groq) with a human-in-the-loop Streamlit dashboard."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP", "B", "SIM"]
+ignore = ["E501"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["api", "core", "dashboard", "graph", "models", "retrieval", "reviewers", "telemetry"]
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-ra --strict-markers"
